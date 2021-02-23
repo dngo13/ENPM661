@@ -1,4 +1,5 @@
-**ENPM 661 Project 1: 15 Puzzle** |
+**ENPM 661 Project 1: 15 Puzzle** 
+
 Diane Ngo
 **Objective**
 The objective of this project is to code a 15 Puzzle in Python.
