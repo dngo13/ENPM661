@@ -16,6 +16,6 @@ Press q to close it. This will then save the video, output files, and end the pr
 
 In the directory:
 Dijkstra.mp4        is the video recording of the exploration with optimal path.
-path.png            is an image of the map after it has completed exploration with optimal path drawn on top
-exploration.txt     is the list of visited nodes during exploration
-shortest_path.txt   is the optimal nodes path
+path.png            is an image of the map after it has completed exploration with optimal path drawn on top.
+exploration.txt     is the list of visited nodes during exploration.
+shortest_path.txt   is the optimal nodes path.
