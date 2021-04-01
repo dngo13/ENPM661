@@ -1,11 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Created on Thu Mar 25 21:29:50 2021
-
-@author: diane
-"""
-
 import numpy as np
 import cv2
 import math
@@ -49,12 +43,8 @@ def create_obstacles():
     cv2.fillPoly(img, [c_cnrs], (255, 255, 255), 1)
     return img
 
-# elif (y - 0.7 * x >= 0) and (y - 0.7 * x - 100 <= 0) and \
-    # (y + 1.4 * x - 176.64 >= 0) and (y + 1.4 * x - 438.64 <= 0):
 
 # Function to check if the node is in an obstacle
-
-
 def check_in_obstacle(node):
     x, y = node[0], node[1]
     # y = 300 - y
@@ -74,7 +64,7 @@ def check_in_obstacle(node):
         return True
     # Angled rectangle
     elif (y - 0.7 * x - clr >= 0) and (y - 0.7 * x - 100 - clr <= 0) and \
-            (y + 1.4*x-176.64 - clr >= 0) and (y + 1.4*x-438.64 - clr <= 0):
+            (y + 1.4*x-176.64 + clr >= 0) and (y + 1.4*x-438.64 - clr <= 0):
         # print("Coordinate inside rectangle")
         return True
     else:
@@ -139,17 +129,19 @@ def get_coords():
 
 # Function to determine action set of movements and cost
 def move(node):
+    # define x y coordinates of the node
     i = node.x
     j = node.y
-
+    # Action sets
     possible_moves = [(i, j + 1), (i + 1, j), (i - 1, j), (i, j - 1),
                       (i + 1, j + 1), (i - 1, j - 1), (i - 1, j + 1),
                       (i + 1, j - 1)]
     possible_paths = []
-
+    # Movement is possible if path is not outside workspace
     for pos, path in enumerate(possible_moves):
         if not (path[0] >= ws_height or path[0] < 0 or path[1] >= ws_width
                 or path[1] < 0):
+            # Cost calculation
             cost = math.sqrt(2) if pos > 3 else 1
             possible_paths.append([path, cost])
     return possible_paths
@@ -255,7 +247,9 @@ def main():
                color=(0, 255, 0), thickness=3)
     cv2.circle(imgcopy, (goal_x, 300 - goal_y), radius=1,
                color=(0, 0, 255), thickness=3)
-    out.write(imgcopy)
+    # Purpose of showing the start and goal on the video
+    for i in range(1000):
+        out.write(imgcopy)
     cv2.imwrite("path.png", imgcopy)  # Saves finished exploration to image
     cv2.imshow("Visualization", imgcopy)  # Shows finished image
 
