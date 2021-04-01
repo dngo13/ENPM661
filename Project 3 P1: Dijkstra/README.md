@@ -22,7 +22,10 @@ Dijkstra.mp4        is the video recording of the exploration with optimal path.
 exploration.txt     is the list of visited nodes during exploration
 shortest_path.txt   is the optimal nodes path
 
+Case 1 video is included in Github, case 2 file size was too large for Github, so a Google Drive link is included
+
 Test case 1 (Google Drive Copy)
 https://drive.google.com/file/d/1l2r5iphXsqggo8TKiIfIfIK4DdA5C-6M/view?usp=sharing
+
 Test case 2 (Google Drive Copy)
 https://drive.google.com/file/d/1RiaNWgBIu3jJwtg9Voul_dg3Y9dukz-Y/view?usp=sharing
