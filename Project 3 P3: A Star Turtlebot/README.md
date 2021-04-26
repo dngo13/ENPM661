@@ -20,8 +20,7 @@ Note that the program takes very long to run, as it has to path plan, create a v
 In the directory where the file is ran, a video named Astar.mp4 shows the optimal path video. The blue areas are just examples of what the path has explored. \
 The program will pop up a figure from matplotlib with the curves from A star and the optimal path in red.
 
-Need to add google drive links
-Test case 1 video: 
+Test case 1 video: https://drive.google.com/file/d/1Pdx3iKQsqN0YY06vfCU54j5zerm5UysD/view?usp=sharing
 
 _________________Part 2_________________ \
 For part 2 of the project, you need to have ROS Melodic, Gazebo, and matplotlib. \
