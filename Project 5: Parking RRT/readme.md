@@ -16,7 +16,7 @@ chmod +x RRT_ros.py \
 cd back to catkin_ws, cd ../../.. \
 roslaunch parking_search navigation.launch \
 New terminal: \
-rosrun RRT_ros.py \\
+rosrun RRT_ros.py
 
 Program will display an image for parking spaces. Press Q to move on. \
 Program will then ask user for input of desired parking space. \
