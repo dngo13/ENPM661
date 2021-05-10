@@ -23,3 +23,5 @@ Program will then ask user for input of desired parking space. \
 Input a number and press enter.\
 Wait for the program to finish running. After seeing the images that are displayed, press Q until the image windows close. \
 ROS will then start moving the robot in Gazebo.
+
+The report is labeled ENPM661_RRT_Final_Report_Group6.pdf, a video of the project working is rrt_parking.mp4. Both files are in the parking search folder.
