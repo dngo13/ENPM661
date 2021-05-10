@@ -1,0 +1,29 @@
+<launch>
+<!--  <arg name="world_name" default="$(find turtlebot3_gazebo)/worlds/turtlebot3_world.world" />-->
+  <arg name="model" default="burger" />
+
+  <!-- Launch turtlebot3 bringup -->
+  <include file="$(find parking_search)/launch/parking_world.launch">
+<!--    <arg name="world_name" value="$(arg world_name)" />-->
+    <arg name="model" value="$(arg model)" />
+    <arg name="x" value="0.2" />
+    <arg name="y" value="0.2" />
+    <arg name="yaw" value="$0" />
+    <arg name="rviz_config" value="$(find parking_search)/rviz/mapping.rviz" />
+  </include>
+
+<!--  &lt;!&ndash; Start mapping &ndash;&gt;-->
+<!--  <include file="$(find parking_search)/launch/turtlebot3_gmapping.launch">-->
+<!--    <arg name="model" value="$(arg model)" />-->
+<!--  </include>-->
+    <!-- Start localization -->
+  <include file="$(find parking_search)/launch/start_amcl.launch">
+    <arg name="initial_pose_x" value="0.2" />
+    <arg name="initial_pose_y" value="0.2" />
+    <arg name="initial_pose_a" value="0" />
+  </include>
+  <!-- Start map server -->
+  <arg name="map_file" default="$(find parking_search)/map/parking_map.yaml" />
+  <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)" />
+
+</launch>
